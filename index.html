@@ -51,16 +51,17 @@
         fetch("https://ipwho.is/")
           .then((r) => r.json())
           .then((data) => {
-            // if (data.success && data.country_code === "SA") {
-            if (data.success && data.country_code === "JO") {
-              // in Saudi Arabia → redirect
-              window.location.replace("home.html");
-            } else {
-              // not Saudi → show error
-              document.getElementById("message").innerHTML =
-                "<h1>عفواً</h1>" +
-                "<p>هذا الموقع متاح فقط داخل المملكة العربية السعودية.</p>";
-            }
+            window.location.replace("home.html");
+            // // if (data.success && data.country_code === "SA") {
+            // if (data.success && data.country_code === "JO") {
+            //   // in Saudi Arabia → redirect
+            //   window.location.replace("home.html");
+            // } else {
+            //   // not Saudi → show error
+            //   document.getElementById("message").innerHTML =
+            //     "<h1>عفواً</h1>" +
+            //     "<p>هذا الموقع متاح فقط داخل المملكة العربية السعودية.</p>";
+            // }
           })
           .catch((err) => {
             console.error(err);
